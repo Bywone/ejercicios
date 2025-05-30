@@ -1,0 +1,81 @@
+    Ejercicio 3
+
+Dado el siguiente código:
+
+class X { void do1() { } }
+class Y extends X { void do2() { } }
+
+class Chrome {
+    public static void main(String[] args) {
+        X x1 = new X();
+        X x2 = new Y();
+        Y y1 = new Y();
+        // inserte código aquí
+    }
+}
+
+¿Cuál opción, insertada independientemente en el comentario, compila? (Elije todas las que apliquen)
+
+A. x2.do2();
+B. (Y)x2.do2();
+C. ((Y)x2).do2();
+D. Ninguna de las opciones de arriba compilan
+
+
+Respuesta que yo creo: C
+=======================================================================================================
+
+Ejercicio 4
+
+Dado el siguiente código:
+
+public class Locomotive {
+    Locomotive() { main("hi"); }
+
+    public static void main(String[] args) {
+        System.out.print("2 ");
+    }
+    public static void main(String args) {
+        System.out.print("3 " + args);
+    }
+}
+
+¿Cuál es el resultado? (Elije todas las que apliquen)
+
+A. 2 estará incluído en el output
+B. 3 estará incluído en el output
+C. hi estará incluído en el output
+D. Compilation fails
+E. An exception is thrown at runtime
+Respuesta que yo creo: A y B
+=======================================================================================================
+
+Ejercicio 5
+
+Dado el siguiente código:
+
+public class Redwood extends Tree {
+    public static void main(String[] args) {
+        new Redwood.go();
+    }
+    void go() {
+        go2(new Tree(), new Redwood());
+        go2((Redwood) new Tree(), new Redwood());
+    }
+    void go2(Tree t1, Redwood r1) {
+        Redwood r2 = (Redwood) t1;
+        Tree t2 = (Tree) r1;
+    }
+}
+class Tree { }
+
+¿Cuál es el resultado? (Escoje todas las que apliquen)
+
+A. An exception is thrown at runtime
+B. Code compiles and runs with no output
+C. Compilations fails at line 112
+D. Compilation fails at line 113
+E. Compilation fails at line 116
+F. Compilation fails at line 117
+
+Respuesta que yo creo: A
